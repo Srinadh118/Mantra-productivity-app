@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+  </head>
+  <body>
+    <div id="app">
+      <main>
+        <section class="prod-app__section">
+          <div class="prod-app__list">
+            <div id="app-1" class="prod-app app__todo">
+              <h1>To Do List</h1>
+              <img
+                src="https://images.unsplash.com/photo-1642923051153-07d4c98fe203?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="todo bg"
+              />
+            </div>
+            <div id="app-2" class="prod-app app__planner">
+              <h1>Daily Planner</h1>
+              <img
+                src="https://images.unsplash.com/photo-1742197062786-3b00a7355015?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Planner bg"
+              />
+            </div>
+            <div id="app-3" class="prod-app app__motivation">
+              <h1>Motivation</h1>
+              <img
+                src="https://images.unsplash.com/photo-1637416067365-2b5e7e8fe8fa?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Motivation bg"
+              />
+            </div>
+            <div id="app-4" class="prod-app app__timer">
+              <h1>Pomodoro Timer</h1>
+              <img
+                src="https://images.unsplash.com/photo-1745837846240-321b1a4871bc?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="pomodoro bg"
+              />
+            </div>
+            <div id="app-5" class="prod-app app__goals">
+              <h1>Daily Goals</h1>
+              <img
+                src="https://images.unsplash.com/photo-1634654422250-9f4526b8453c?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="goals bg"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="prod-app__area area__todo">
+          <div class="navbar app__nav">
+            <h1 class="heading">Your Personalised Task List</h1>
+            <button id="btn-1" class="close-btn" title="Esc Close"></button>
+          </div>
+          <div class="app__area">
+            <div class="app-content">
+              <div class="app-content__addtask">
+                <form>
+                  <input
+                    type="text"
+                    placeholder="Add a new task"
+                    id="input-addtask"
+                    required
+                  />
+                  <textarea
+                    name="taskdetails"
+                    id="taskdetails"
+                    placeholder="Task Details..."
+                  ></textarea>
+                  <div class="taskpriority-wrapper">
+                    <select
+                      name="taskpriority"
+                      id="taskpriority"
+                      title="Task Priority"
+                    >
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high" selected>High</option>
+                    </select>
+                    <svg
+                      class="select-arrow"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <path
+                        stroke="currentColor"
+                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                      />
+                    </svg>
+                  </div>
+                  <button type="submit" id="btn-addtask">Add Task</button>
+                </form>
+              </div>
+              <div class="app-content__viewtask"></div>
+            </div>
+          </div>
+        </section>
+        <section class="prod-app__area area__planner">
+          <div class="navbar app__nav">
+            <h1 class="heading">Daily Planner</h1>
+            <button id="btn-2" class="close-btn" title="Esc Close"></button>
+          </div>
+          <div class="app__area">
+            <div class="app-content"></div>
+          </div>
+        </section>
+        <section class="prod-app__area area__motivation">
+          <div class="navbar app__nav">
+            <h1 class="heading">Motivation</h1>
+            <button id="btn-3" class="close-btn" title="Esc Close"></button>
+          </div>
+          <div class="app__area"></div>
+        </section>
+        <section class="prod-app__area area__timer">
+          <div class="navbar app__nav">
+            <h1 class="heading">Pomodoro Timer</h1>
+            <button id="btn-4" class="close-btn" title="Esc Close"></button>
+          </div>
+          <div class="app__area"></div>
+        </section>
+        <section class="prod-app__area area__goals">
+          <div class="navbar app__nav">
+            <h1 class="heading">Daily Goals</h1>
+            <button id="btn-5" class="close-btn" title="Esc Close"></button>
+          </div>
+          <div class="app__area"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+<!-- https://images.unsplash.com/photo-1719235903846-72be00464877?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D -->

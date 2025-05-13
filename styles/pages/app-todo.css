@@ -1,0 +1,469 @@
+:root {
+  --priority-high: #ff2962;
+  --priority-medium: #d08700;
+  --priority-low: #009966;
+}
+
+html {
+  font-size: 12px;
+}
+
+.prod-app__area.area__todo {
+  width: 100%;
+  padding: 0;
+}
+.prod-app__area.area__todo .app__area {
+  width: 100%;
+  display: flex;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.prod-app__area.area__todo .app__area .app-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-base);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask {
+  width: 100%;
+  background-color: var(--ter);
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-sm);
+  border-radius: 6px;
+  overflow-y: auto;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 0 6px 6px 0;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask::-webkit-scrollbar-thumb {
+  background-color: var(--sec);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form {
+  width: 100%;
+  height: -moz-min-content;
+  height: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form input:-webkit-autofill,
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea:-webkit-autofill,
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form select:-webkit-autofill {
+  background-color: var(--bg) !important; /* desired background */
+  -webkit-box-shadow: 0 0 0 1000px var(--bg) inset !important; /* Trick to override background */
+  -webkit-text-fill-color: var(--fg) !important; /* Text color */
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s; /* Prevents flash */
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form input:focus,
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea:focus,
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form select:focus {
+  outline: 2px solid var(--sec);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form input#input-addtask {
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 0.8rem 1.2rem;
+  font-size: var(--size-xl);
+  border-radius: 6px;
+  font-weight: 200;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails {
+  width: 100%;
+  height: 15vh;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 0.8rem 1.2rem;
+  font-size: var(--size-xl);
+  border-radius: 6px;
+  font-weight: 200;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 0 6px 6px 0;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails::-webkit-scrollbar-thumb {
+  background-color: var(--sec);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form .taskpriority-wrapper {
+  position: relative;
+  width: 100%;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form .taskpriority-wrapper select#taskpriority {
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 0.8rem 1rem;
+  font-size: var(--size-lg);
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* removes default OS styling */
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form .taskpriority-wrapper .select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%) rotateX(0);
+  width: 20px;
+  height: 20px;
+  fill: var(--fg);
+  pointer-events: none;
+  transition: all 0.2s linear;
+  transform-origin: center;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form .taskpriority-wrapper .open {
+  transform: translateY(-50%) rotateZ(180deg);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form button#btn-addtask {
+  width: 100%;
+  font-size: var(--size-xl);
+  font-weight: 700;
+  transition: background-color 0.5s linear, color 0.5s linear;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form button#btn-addtask:hover, .prod-app__area.area__todo .app__area .app-content .app-content__addtask form button#btn-addtask:focus {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__addtask form button#btn-addtask:focus-visible {
+  outline: 2px solid var(--accent);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask {
+  width: 100%;
+  background-color: var(--ter);
+  padding: var(--size-sm);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-sm);
+  overflow-y: auto;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 0 6px 6px 0;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask::-webkit-scrollbar-thumb {
+  background-color: var(--sec);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--bg);
+  border-radius: 6px;
+  padding: 1rem 1rem 0 1rem;
+  transition: opacity 0.5s linear;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task:focus-within {
+  outline: 2px solid var(--sec);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-base);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details {
+  position: relative;
+  display: inline flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details h2 {
+  font-size: var(--size-2xl);
+  color: var(--fg);
+  font-weight: 700;
+  gap: 0.5rem;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  transition: opacity 0.5s ease, -webkit-text-decoration 0.5s ease-in;
+  transition: text-decoration 0.5s ease-in, opacity 0.5s ease;
+  transition: text-decoration 0.5s ease-in, opacity 0.5s ease, -webkit-text-decoration 0.5s ease-in;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details span {
+  vertical-align: text-top;
+  overflow-wrap: normal;
+  font-size: var(--size-sm);
+  line-height: 1;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  color: var(--bg);
+  text-transform: capitalize;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details .low {
+  background-color: var(--priority-low);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details .medium {
+  background-color: var(--priority-medium);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details .high {
+  background-color: var(--priority-high);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-undo {
+  display: none;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete {
+  width: 35px;
+  height: 35px;
+  padding: 0.4rem;
+  background-color: var(--ter);
+  color: var(--priority-high);
+  transition: color 0.4s linear, scale 0.3s linear;
+  display: block flex;
+  align-items: center;
+  justify-content: center;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete:hover {
+  color: var(--success);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete:active {
+  scale: 0.95;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete:focus-visible {
+  outline: 2px solid var(--sec);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__more {
+  width: 100%;
+  max-height: 0;
+  padding: 0 var(--size-sm);
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__more p {
+  width: 100%;
+  font-size: var(--size-xl);
+  color: var(--fg);
+  font-weight: 500;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished {
+  opacity: 0.8;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__details h2 {
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions {
+  display: flex;
+  place-items: center;
+  gap: 0.3rem;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo {
+  display: inline-block;
+  background-color: var(--ter);
+  font-size: var(--size-base);
+  width: 35px;
+  height: 35px;
+  padding: 0.5rem;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo:hover {
+  background-color: var(--ter);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo:focus-visible {
+  outline: 2px solid var(--sec);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--fg);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete {
+  width: 35px;
+  height: 35px;
+  padding: 0.5rem;
+  background-color: var(--ter);
+  transition: none;
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete:hover {
+  background-color: var(--ter);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete:focus-visible {
+  outline: 2px solid var(--sec);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--priority-high);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task-open {
+  gap: var(--size-sm);
+}
+.prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task-open .task__more {
+  opacity: 1;
+  padding: var(--size-sm);
+  border-top: 1px solid var(--ter);
+}
+
+/* xxs */
+@media (min-width: 425px) {
+  html {
+    font-size: 14px;
+  }
+  .prod-app__area.area__todo {
+    padding: 1rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails {
+    height: 20vh;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less {
+    gap: var(--size-2xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details h2 {
+    font-size: var(--size-xl);
+    width: 100%;
+  }
+}
+/* xs */
+/* @media (min-width: 475px) {} */
+/* sm */
+@media (min-width: 640px) {
+  .prod-app__area.area__todo {
+    padding: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area {
+    padding: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content {
+    gap: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask {
+    padding: var(--size-base);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form {
+    gap: var(--size-base);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails {
+    height: 15vh;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask {
+    padding: var(--size-base);
+    gap: var(--size-base);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete {
+    width: 40px;
+    height: 40px;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo {
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* md */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+/* lg */
+@media (min-width: 1024px) {
+  .prod-app__area.area__todo {
+    height: 100vh;
+    padding: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area {
+    height: calc(100% - 4rem);
+    padding: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content {
+    flex-direction: row;
+    gap: var(--size-xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask {
+    align-self: flex-start;
+    width: 35%;
+    height: 100%;
+    padding: 1.375rem 1rem 1.375rem calc(1rem + 6px);
+    scrollbar-gutter: stable;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form {
+    gap: var(--size-base);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails {
+    height: 30vh;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask {
+    width: 62%;
+    height: 100%;
+    padding: 1.375rem 1rem 1.375rem calc(1rem + 6px);
+    gap: var(--size-base);
+    scrollbar-gutter: stable;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete {
+    width: 40px;
+    height: 40px;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-undo {
+    width: 40px;
+    height: 40px;
+    padding: 0.6rem 0.5rem 0.3rem 0.5rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task.finished .task__actions .btn-delete {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* xl */
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+  .prod-app__area.area__todo .app__area {
+    padding: 2rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask {
+    padding: 1.375rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form {
+    gap: var(--size-lg);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__addtask form textarea#taskdetails {
+    height: 40vh;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask {
+    width: 62%;
+    gap: var(--size-lg);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task {
+    width: 100%;
+    gap: var(--size-lg);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less {
+    gap: 2rem;
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__details h2 {
+    max-width: 40ch;
+    font-size: var(--size-2xl);
+  }
+  .prod-app__area.area__todo .app__area .app-content .app-content__viewtask .task .task__less .task__actions .btn-delete {
+    width: 42px;
+  }
+}
+/* 2xl */
+/* @media (min-width: 1536px) {} */
